@@ -1,0 +1,4 @@
+zathura-pdf-mupdf
+gimp
+inkscape
+libreoffice-still
