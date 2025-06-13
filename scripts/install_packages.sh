@@ -11,7 +11,8 @@ fi
 
 # Install basic arch packages
 pacman -S - < $CWD/packages/base_package_list.txt
-pacman -S - < $CWD/packages/software_package_list.txt
+pacman -S - < $CWD/packages/programming_list.txt
+# pacman -S - < $CWD/packages/software_package_list.txt
 
 systemctl start pipewire.service
 systemctl start wireplumber.service

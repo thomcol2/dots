@@ -7,8 +7,8 @@ recursive_link() {
     done
 }
 
-# It is assumed that the user has already installed git
-git clone https://github.com/thomcol2/dots ~/.dots
+# It is assumed that the user has already installed git and run the command 
+# 'git clone https://github.com/thomcol2/dots ~/.dots'
 
 mkdir ~/.config
 mkdir ~/scripts
