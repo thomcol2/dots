@@ -6,7 +6,7 @@ Installation
 2. Create and add an ssh key for github
 3. Clone the github repository with the command
 
-git clone https://github.com/thomcol2/dots ~/.dots
+git clone git@github.com:thomcol2/dots.git ~/.dots
 
 4. Change directory to .dots with 'cd ~/.dots'
 5. Run the script ./install_files.sh
