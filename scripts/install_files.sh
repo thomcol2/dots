@@ -13,6 +13,6 @@ recursive_link() {
 mkdir ~/.config
 mkdir ~/scripts
 
-recursive_link ~/dots/.config ~/practice
+recursive_link ~/dots/.config ~/.config
 recursive_link ~/dots/scripts ~/scripts
 recursive_link ~/dots ~
