@@ -4,10 +4,9 @@ bluetui
 iwd
 impala
 brightnessctl
-pipewire
-wireplumber 
 libnotify
 dunst
+ttf-hack
 ttf-hack-nerd
 nvim
 ranger

@@ -22,7 +22,7 @@ sudo systemctl start bluetooth.service && sudo systemctl enable bluetooth.servic
 suckless_build() {
     echo -e "\n\033[1m##### building $1 #####\033[0m"
     cd $CWD/.config/$1
-    sudo make clean install || echo -e "\n\033[1m##### $1 build failed #####\033[0m"
+    sudo make install clean || echo -e "\n\033[1m##### $1 build failed #####\033[0m"
 }
 
 suckless_build dwm
@@ -30,6 +30,19 @@ suckless_build dwmblocks
 suckless_build dmenu
 suckless_build st
 suckless_build slock
+
+
+# Set background (breaks dmenu if not present)
+FOLDER=~/wallpapers
+SCRIPT=~/scripts/pywal.sh
+
+CHOICE=$(nsxiv -o -t $FOLDER)
+case $CHOICE in
+    *.*)
+        feh --bg-fill $CHOICE
+        wal -i $CHOICE -n -o $SCRIPT ;;
+    *) ;;
+esac
 
 
 echo -e "\n\033[1m##### graphics drivers must be installed separately #####\033[0m"
