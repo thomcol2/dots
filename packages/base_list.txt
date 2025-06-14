@@ -1,5 +1,3 @@
-xorg-server 
-xorg-apps 
 man-db
 bluez
 bluetui
@@ -10,11 +8,11 @@ pipewire
 wireplumber 
 libnotify
 dunst
-ttf-hack
+ttf-hack-nerd
 nvim
 ranger
 redshift
-python-pywal16
+python-pywal
 picom
 feh
 nsxiv

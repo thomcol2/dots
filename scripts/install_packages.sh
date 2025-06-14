@@ -1,30 +1,28 @@
 #!/usr/bin/env bash
-[[ $EUID -ne 0 ]] && echo "This script must be run as root." && exit 1
 
 CWD=$(pwd)
 
-if [ $CWD != ".dots" ]; then 
-    echo "This script must be run in the '.dots' directory"
+[[ $CWD != "/home/thomcol/.dots" ]] && 
+    echo "##### script CWD must be '.dots' #####" && 
     exit 1
-fi
 
 
 # Install arch packages
-pacman -S --needed - < $CWD/packages/base_package_list.txt
-pacman -S --needed - < $CWD/packages/programming_list.txt
-# pacman -S --needed - < $CWD/packages/software_package_list.txt
+sudo pacman -S --needed xorg-server xorg-apps xorg-xinit
+sudo pacman -S --needed - < $CWD/packages/base_list.txt
+sudo pacman -S --needed - < $CWD/packages/programming_list.txt
+# sudo pacman -S --needed - < $CWD/packages/software_package_list.txt
 
 
 # Enable and start services
-systemctl start bluetooth.service
-systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service && sudo systemctl enable bluetooth.service
 
 
 # Install suckless packages
 suckless_build() {
-    echo "\n##### Building: $1 #####\n"
+    echo -e "\n\033[1m##### building $1 #####\033[0m"
     cd $CWD/.config/$1
-    make clean install || echo "##### $1 build failed #####"
+    sudo make clean install || echo -e "\n\033[1m##### $1 build failed #####\033[0m"
 }
 
 suckless_build dwm
@@ -34,4 +32,4 @@ suckless_build st
 suckless_build slock
 
 
-echo "\nGraphics drivers must be installed separately\n"
+echo -e "\n\033[1m##### graphics drivers must be installed separately #####\033[0m"
