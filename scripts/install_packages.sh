@@ -16,14 +16,8 @@ pacman -S --needed - < $CWD/packages/programming_list.txt
 
 
 # Enable and start services
-systemctl start pipewire.service
-systemctl start wireplumber.service
 systemctl start bluetooth.service
-systemctl start iwd.service
-systemctl enable pipewire.service
-systemctl enable wireplumber.service
 systemctl enable bluetooth.service
-systemctl enable iwd.service
 
 
 # Install suckless packages
